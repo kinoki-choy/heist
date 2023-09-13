@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='shortcut icon', type='image/png', href='/static/icons/icon.png')
+    link(rel='stylesheet', href='/static/stylesheets/bulma.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Expletus+Sans|Slabo+27px|Raleway:300,600')
+    link(rel='stylesheet', href='/static/stylesheets/app.css')
+    title= title ? title+' - Heist' : 'Heist'
+  body
+    section.section
+      .container
+        .columns
+          div(class=`column ${nav_class || 'is-one-third'}`)
+            .logo
+              a(href='/')
+                h1 Heist
+              br
+              span v1.0 powered by Youtube &amp; Node.js
+            ul.nav
+              li
+                form.search(action='/search')
+                  input#searchField(type='text', name='q', placeholder='Search', value=query, autocomplete='off')
+              li
+                a(href='/music') Music Library
+              li
+                a(href='/sync') Sync
+            .download_status.menu
+              p.menu-label.heading(style={display: Object.keys(downloadQue).length == 0 ? 'none' : 'inline'}) Queue
+              ol.menu-list.queue
+                each data, id in downloadQue
+                  li= data.title
+                    progress.progress.is-small(id=id, value=data.sta, max='100')
+          .column    
+            block content
+        .modal
+          .modal-background
+          .modal-content
+            .youtube_iframe_container
+              iframe#video(src='', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
+            button.modal-close.is-large
+    script(src='https://unpkg.com/axios/dist/axios.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js')
+    script(src='/static/javascripts/socket_events.js')
+    block scripts

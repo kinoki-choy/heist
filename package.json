@@ -1,0 +1,24 @@
+{
+  "name": "heist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs-extra": "^7.0.1",
+    "get-mp3-duration": "^1.0.0",
+    "moment": "^2.22.2",
+    "nedb": "^1.8.0",
+    "nodemon": "^1.18.5",
+    "pug": "^2.0.3",
+    "socket.io": "^2.1.1",
+    "youtube-mp3-downloader": "^0.5.3",
+    "youtube-search": "^1.1.3"
+  }
+}

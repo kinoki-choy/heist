@@ -1,0 +1,21 @@
+extends layout
+
+block content  
+  each songs, artist in docs
+    .group_by_artist
+      h3= artist
+      ul
+        each song in songs
+          li= song.title
+  .controls
+    form(method='POST', action='.')
+      strong #{songs_count} songs /
+      input.sync(value='Sync' type='submit')
+  .sync_status
+    .log
+block scripts
+  script(src='static/javascripts/sync_music_store.js')
+  script.
+    (function() {
+        SyncMusicStore.init();
+    })();

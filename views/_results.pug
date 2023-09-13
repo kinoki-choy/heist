@@ -1,0 +1,20 @@
+each result in results
+  if(result.kind == 'youtube#video')
+    .column
+      .result
+        .columns
+          .column.is-one-quarter
+            a.with-modal(href=result.link, target='_blank', data-youtube-id=result.id)
+              img.thumbnail(src=result.thumbnails.medium.url)
+          .column
+            form.download_form(action='/download', method='POST')
+              p
+                a.with-modal(href=result.link, target='_blank', data-youtube-id=result.id)
+                  strong= result.title
+                br
+                em=result.channelTitle
+                span.seperator •
+                =moment(result.publishedAt).fromNow()
+                input.button.button-clear.download(value='' type='submit' onclick=`YoutubeSearch.requestDownload("${result.id}", "${result.title}"); return false;`)
+if pageInfo.nextPageToken
+  a#load_more(href=nextPageUrl) +

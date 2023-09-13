@@ -1,0 +1,247 @@
+html {
+  background-color: #f6f19c;
+}
+
+body, body a {
+  font-family: 'Slabo 27px', serif !important;
+  color: #444 !important;
+}
+
+input::placeholder {
+  color: #444;
+}
+
+input:focus {
+  outline: none;
+}
+
+.logo {
+  margin: 50px 0 0 8px;
+}
+
+.logo a h1 {
+  color: #444;
+  line-height: 0;
+  margin-bottom: 0;
+  font-size: 2.5rem;
+  display: inline-block;
+  font-family: 'Expletus Sans', cursive;
+}
+
+.logo span {
+  font-size: .9rem;
+  color: grey !important;
+  font-family: 'Expletus Sans', cursive;
+}
+
+.nav {
+  margin-top: 30px;
+  padding-right: 20px;
+}
+
+.nav li {
+  margin: 0;
+  list-style: none;
+  font-size: 1.4rem;
+  border-bottom: 1px dashed #777;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.3s;
+}
+
+.nav li:hover {
+  background-color: #f6f17c;
+}
+
+.nav li a {
+  display: block;
+  padding: 12px 0 2px 8px;
+}
+
+span.seperator {
+  padding: 0 6px;
+  font-weight: 400;
+  font-size: .9em;
+}
+
+.button {
+  color: #606c76 !important;
+  border-color: #999 !important;
+  border-radius: 0 !important;
+  padding: 0 1.2rem !important;
+  font-weight: 300 !important;
+}
+
+.button:hover {
+  color: #333 !important;
+  border-color: #grey !important;
+}
+
+.button.download {
+  background: url('../icons/download.svg') no-repeat;
+  background-size: contain;
+  border: none;
+  display: inline-block !important;
+  opacity: .7;
+  margin: 0 0 0 12px !important;
+  height: 16px !important;
+}
+
+.button.download:hover {
+  opacity: 1;
+}
+
+.download_status, .playing {
+  margin-top: 60px;
+}
+
+ol.queue {
+  padding-right: 20px;
+}
+
+ol.queue li {
+  list-style: decimal-leading-zero;
+  list-style-position: inside;
+  font-size: 1rem;
+  padding: 5px 0;
+}
+
+ol.queue li span {
+  display: inline-block;
+  float: right;
+  font-weight: bold;
+}
+
+.progress {
+  height: 0.2rem !important;
+}
+
+.results {
+  font-family: 'Raleway', sans-serif;
+}
+
+.result {
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+}
+
+.result:hover {
+  background-color: #f6f17c;
+}
+
+.result p {
+  font-size: 1.2rem.;
+}
+
+form.search {
+  margin-bottom: 0;
+}
+
+input#searchField {
+  margin: 0;
+  border: 0;
+  width: 100%;
+  color: #444;
+  font-size: 1em;
+  font-family: inherit;
+  padding: 12px 0 2px 8px;
+  display: block !important;
+  background: url('../icons/search.png') no-repeat right;
+}
+
+a#load_more {
+  display: block;
+  color: white !important;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: #333;
+  line-height: 1.2;
+  margin: 14px 0 40px;
+  padding-bottom: .3rem;
+}
+
+a#load_more:hover {
+  background-color: #444;
+}
+
+table.music {
+  background-color: inherit;
+  width: 100%;
+}
+table.music th, table.music td {
+  border-bottom: 1px dashed #777;
+}
+
+table.music tbody tr {
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+}
+
+table.music tbody tr:hover, table.music tr#current {
+  background-color: #f6f17c;
+  cursor: pointer;
+}
+
+table.music input[type=text] {
+  margin: 0;
+  border: 0;
+  color: #444;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 12px 0 2px 0;
+  display: block !important;
+  width: 100%;
+  background-color: inherit;
+}
+
+table.music input[type=text]:hover {
+  cursor: pointer;
+}
+
+.group_by_artist {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #777;
+}
+
+.group_by_artist h3 {
+  font-weight: bold;
+  padding-bottom: 6px;
+}
+
+.group_by_artist ul li {
+  padding: 1px 0;
+}
+
+.controls input.sync {
+  border: none;
+  font-size: 1.1rem;
+  font-family: 'Slabo 27px', serif !important;
+  text-decoration: underline;
+  background-color: #f6f19c;
+  color: #444;
+  cursor: pointer;
+}
+
+.sync_status .log {
+  margin-top: 30px;
+  white-space: pre-wrap;
+}
+
+.modal-content {
+  width: 800px;
+}
+
+.youtube_iframe_container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

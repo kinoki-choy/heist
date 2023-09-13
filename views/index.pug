@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .columns
+    .results
+      if results
+        include _results.pug
+
+block scripts
+  script(src='/static/javascripts/youtube_search.js')
+  script(src='/static/javascripts/modal.js')
+  script.
+    (function() {
+        YoutubeSearch.init();
+        Modal.init();
+    })();

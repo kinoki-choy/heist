@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  if docs.length !== 0
+    form(action='.', method='POST')
+      table.table.music
+        thead
+          tr
+            th
+              a(href=`?order=artist&sort=${sort}`) Artist
+            th
+              a(href=`?order=title&sort=${sort}`) Title
+            th Time
+        tbody
+          each doc in docs
+            tr(data-doc-id=doc.id, data-path=`/static/downloads/${doc.id}.mp3`, data-display-title=doc.artist ? `${doc.artist} - ${doc.title}` : doc.title)
+              td
+                input.song.editable(type='text', data-doc-id=doc.id, name='artist', placeholder=Artist, value=doc.artist, autocomplete='off', size=12, readonly)
+              td
+                input.song.editable(type='text', data-doc-id=doc.id, name='title', placeholder=Title, value=doc.title, autocomplete='off', size=doc.title.length, readonly)
+              td= doc.drn
+
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.15/howler.min.js')
+  script(src='static/javascripts/music_store.js')
+  script.
+    (function() {
+        MusicStore.init();
+    })();
+    
